@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="_REPLACE_WITH_DESCRIPTION_" />
+    <meta name="description" content="Page containing a Rick and Morty API" />
     <meta
       name="keywords"
-      content="HTML, CSS, JavaScript, _REPLACE_WITH_KEYWORD_"
+      content="HTML, CSS, JavaScript, Rick and Morty, API, Course Assignment"
     />
-    <meta name="author" content="_YOUR_NAME_" />
+    <meta name="author" content="Alexander Bjerketvedt" />
     <link rel="stylesheet" href="/style.css" />
+    <script defer src="/main.js"></script>
     <!-- TODO: Import Javascript -->
     <title>_REPLACE_SITE_NAME</title>
   </head>
@@ -25,16 +26,31 @@
       <article role="doc-introduction">
         <h2>List</h2>
 
-        <p>_REPLACE_INTRODUCTION_</p>
+        <p></p>
       </article>
 
-      <section role="list">
-        <div id="js-list-container">_LOADING_INDICATOR_GOES_HERE_</div>
+      <div class="grid">
+        <a href="/detailspage.html?id=${characters[i].id}" class="card">
+          <div class="details">
+              <h4 class="name">${characters[i].name}</h4>
+              <div class="image skeleton" style="background-image: url(https://picsum.photos/id/237/200/300);"></div>
+                <p class="status">Status: ${characters[i].status}</p>
+                <p class="species">Species: ${characters[i].species}</p>
+                <p class="origin">Origin: ${characters[i].origin.name}</p>
+          </div>
+      </div>
+      </a>
+      </div>
+      <input type="search" name="search-text" id="js-search-bar" placeholder="Search here!">
+
+      <section role="list" id="results">
+        <div class="skeleton" id="js-list-container">_LOADING_INDICATOR_GOES_HERE_</div>
+        <div class="results"></div>
       </section>
     </main>
 
     <footer class="l-footer">
-      <small>Created with ❤️ by _REPLACE_</small>
+      <small>Created with ❤️ by Alex</small>
     </footer>
   </body>
 </html>
