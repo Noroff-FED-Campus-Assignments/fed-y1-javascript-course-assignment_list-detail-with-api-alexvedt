@@ -5,6 +5,26 @@
  * @example https://fed-vocational-astro-course.vercel.app/en/html-css/module-3/media-queries
  */
 
+/*border style*/
+
+@media (--motionOK) {
+  :where(:focus-visible) {
+    transition: outline-offset 145ms var(--ease-2);
+  }
+  :where(:not(:active):focus-visible) {
+    transition-duration: .25s;
+  }
+}
+:where(:not(:active):focus-visible) {
+  outline-offset: 1px;
+}
+
+input {
+  outline-offset: 1px;
+}
+
+
+
 .card {
   border-radius: --radius-1;
     display: flex;
