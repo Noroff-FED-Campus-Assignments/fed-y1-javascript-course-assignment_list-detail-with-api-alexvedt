@@ -13,38 +13,32 @@
     <link rel="stylesheet" href="/style.css" />
     <script defer src="/main.js"></script>
     <!-- TODO: Import Javascript -->
-    <title>_REPLACE_SITE_NAME</title>
+    <title>Rick & Morty Free Api</title>
   </head>
   <body class="animate__animated animate__fadeIn">
     <header class="l-header">
-      <h1>Home</h1>
+      <h1>Rick & Morty free API</h1>
     </header>
 
     <main class="l-main">
       <section role="search"></section>
 
       <article role="doc-introduction">
-        <h2>List</h2>
+        <h2>Terms of use</h2>
+        <p>Feel free to use this API I built for a course assignment to learn more about the Rick & Morty characters. <br>You can find the code <a href="/contact.html">here</a></p>
 
         <p></p>
       </article>
-
-      <div class="grid">
-        <a href="/detailspage.html?id=${characters[i].id}" class="card">
-          <div class="details">
-              <h4 class="name">${characters[i].name}</h4>
-              <div class="image skeleton" style="background-image: url(https://picsum.photos/id/237/200/300);"></div>
-                <p class="status">Status: ${characters[i].status}</p>
-                <p class="species">Species: ${characters[i].species}</p>
-                <p class="origin">Origin: ${characters[i].origin.name}</p>
-          </div>
-      </div>
-      </a>
-      </div>
-      <input type="search" name="search-text" id="js-search-bar" placeholder="Search here!">
-
+      <div class="search-options">
+        <select class="filter" name="filter" id="js-select-filter-element">
+          <option value="all" selected="selected">All</option>
+          <option value="sort=title&sortOrder=asc">(A to Z)</option>
+          <option value="sort=title&sortOrder=desc">(Z to A)</option>
+        </select>
+      <input class="search-bar" type="search" name="search-text" id="js-search-bar" placeholder="Search here!">
+    </div>
       <section role="list" id="results">
-        <div class="skeleton" id="js-list-container">_LOADING_INDICATOR_GOES_HERE_</div>
+        <!-- <div class="skeleton" id="js-list-container">_LOADING_INDICATOR_GOES_HERE_</div> -->
         <div class="results"></div>
       </section>
     </main>

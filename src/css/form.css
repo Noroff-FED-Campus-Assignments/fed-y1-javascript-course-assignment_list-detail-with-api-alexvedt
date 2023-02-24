@@ -4,7 +4,7 @@
  * @example https://fed-vocational-astro-course.vercel.app/en/html-css/module-2/forms
  */
 
-.c-form {
+/* .form {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: var(--spacing-1);
@@ -12,4 +12,39 @@
   background-color: var(--color-white);
   border-radius: var(--radius-1);
   box-shadow: var(--shadow-1);
+}
+ */
+.form-container{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form{
+  display: flex;
+  justify-content: start;
+}
+
+.form-container input {
+  margin-bottom: 1rem;
+}
+
+
+
+.contact-h2{
+  margin-bottom: 1rem;
+}
+
+.form-p{
+  margin-bottom: 2rem;
+}
+
+.is-valid{
+  border: 1px solid green;
+}
+
+.is-invalid{
+  border: 1px solid red;
 }

@@ -1,46 +1,45 @@
-/*
-============================================
-Constants
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L66
-============================================
-*/
+const detailsContainer = document.querySelector("#details-container");
+const detailsHeading = document.querySelector("#character-heading");
+console.log(detailsHeading);
 
-// TODO: Get DOM elements from the DOM
+const queryString = document.location.search;
 
-// TODO: Get the query parameter from the URL
+const params = new URLSearchParams(queryString);
 
-// TODO: Get the id from the query parameter
+const id = params.get("id");
 
-// TODO: Create a new URL with the id @example: https://www.youtube.com/shorts/ps7EkRaRMzs
+console.log("id >>>", id);
 
-/*
-============================================
-DOM manipulation
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L89
-============================================
-*/
+const url = `https://rickandmortyapi.com/api/character/${id}`;
+console.log(url);
 
-// TODO: Fetch and Render the lsit to the DOM
+async function fetchCharacter() {
+  try {
+    const response = await fetch(url);
+    const responseJson = await response.json();
+    console.log(responseJson);
 
-// TODO: Create event listeners for the filters and the search
+    const singleCharacter = responseJson;
 
-/*
-============================================
-Data fectching
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L104
-============================================
-*/
+    detailsContainer.innerHTML = "";
+    document.title = singleCharacter.name;
+    detailsHeading.innerHTML = singleCharacter.name;
+    detailsContainer.innerHTML += `
+    <a href="/details.html?id=${singleCharacter.id}" class="card">
+    <div class="details">
+        <h4 class="name">${singleCharacter.name}</h4>
+        <img class="image" src="${singleCharacter.image}" alt="${singleCharacter.name}">
+          <p class="status">Status: ${singleCharacter.status}</p>
+          <p class="species">Species: ${singleCharacter.species}</p>
+          <p class="origin">Origin: ${singleCharacter.origin.name}</p>
+    </div>
+</div>
+</a>
+    `;
+  } catch (error) {
+    console.log(error);
+    detailsContainer.innerHTML = `<p>Something wrong happened.. => ${error}</p>`;
+  }
+}
 
-// TODO: Fetch an a single of objects from the API
-
-/*
-============================================
-Helper functions
-============================================
-*/
-
-/**
- * TODO: Create a function to create a DOM element.
- * @example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/src/js/detail.js#L36
- * @param {item} item The object with properties from the fetched JSON data.
- */
+fetchCharacter();

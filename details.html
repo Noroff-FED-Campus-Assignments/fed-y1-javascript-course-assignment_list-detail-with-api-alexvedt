@@ -11,17 +11,20 @@
     />
     <meta name="author" content="_YOUR_NAME_" />
     <link rel="stylesheet" href="/style.css" />
-    <!-- TODO: Import Javascript -->
+    <script defer src="/src/js/details.js"></script>
     <title>_REPLACE_WITH_OBJECT_TITLE | _REPLACE_SITE_NAME</title>
   </head>
   <body class="animate__animated animate__fadeIn">
     <header class="l-header">
-      <h1><span id="js-h1">_REPLACE_WITH_OBJECT_TITLE</span>Details</h1>
+      <h1 id="character-heading"></h1>
     </header>
 
     <main class="l-main">
       <article>
-        <!-- TODO: Insert loading indicator and replace with object detail properties -->
+        <section id="details-container">
+          <!-- <div class="skeleton" id="js-list-container">_LOADING_INDICATOR_GOES_HERE_</div> -->
+          <div class="results"></div>
+        </section>
       </article>
     </main>
 

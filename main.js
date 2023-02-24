@@ -24,21 +24,19 @@ async function fetchCharacters(searchString = "") {
 
     for (let i = 0; i < filteredCharacters.length; i++) {
       resultsContainer.innerHTML += `
-      <a href="/detailspage.html?id=${characters[i].id}" class="card">
+      <a href="/details.html?id=${characters[i].id}" class="card">
           <div class="details">
               <h4 class="name">${characters[i].name}</h4>
-              <div class="image" style="background-image: url(${characters[i].image});"></div>
+              <img class="image" src="${characters[i].image}" alt="${characters[i].name}">
                 <p class="status">Status: ${characters[i].status}</p>
                 <p class="species">Species: ${characters[i].species}</p>
                 <p class="origin">Origin: ${characters[i].origin.name}</p>
           </div>
       </div>
       </a>
-
       `;
     }
   } catch (error) {
-    console.log(error);
     resultsContainer.innerHTML = `<p>Something wrong happened.. => ${error}</p>`;
   }
 }
@@ -57,7 +55,8 @@ function filterCharacters(characters, searchString) {
       character.name.toLowerCase().includes(searchString) ||
       character.type.toLowerCase().includes(searchString) ||
       character.species.toLowerCase().includes(searchString) ||
-      character.status.toLowerCase().includes(searchString)
+      character.status.toLowerCase().includes(searchString) ||
+      character.origin.name.toLowerCase().includes(searchString)
     );
   });
 }

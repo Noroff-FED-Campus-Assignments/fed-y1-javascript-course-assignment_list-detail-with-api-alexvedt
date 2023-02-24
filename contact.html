@@ -11,7 +11,7 @@
     />
     <meta name="author" content="_YOUR_NAME_" />
     <link rel="stylesheet" href="/style.css" />
-    <!-- TODO: Import Javascript -->
+    <script defer src="/src/js/contact.js"></script>
     <title>Contact Us | _REPLACE_SITE_NAME</title>
   </head>
   <body class="animate__animated animate__fadeIn">
@@ -21,14 +21,29 @@
 
     <main class="l-main">
       <article role="doc-introduction">
-        <h2>Contact form</h2>
+        <h2 class="contact-h2">Contact form</h2>
 
-        <p>_REPLACE_INTRODUCTION_</p>
+        <p class="form-p">Feedback & Contact form!</p>
       </article>
 
-      <section role="form-section">
-        <!-- TODO: Creat Form elements here -->
-      </section>
+<div class="contact-container">
+        <form action="" method="POST" class="form-container" id="formField">
+          <input type="text" name="name" id="nameField" placeholder="Name" />
+
+          <input name="subject" id="subjectField" placeholder="Subject"></input>
+
+          <input type="email" name="email" id="emailField" placeholder="Email" />
+
+          <input type="address" name="address" id="adressField" placeholder="Address" />
+
+          <textarea name="message" id="messageField" cols="30" rows="10" placeholder="Write your message.."></textarea>
+
+          <button type="submit" id="submitButton" placeholder="Your form is ready to Submit">Submit</button>
+        </form>
+      <div class="imgcontainer">
+        <img src="https://www.pngitem.com/pimgs/m/26-261959_rick-and-morty-png-picture-rick-and-morty.png" alt="Rick & Morty photo">
+      </div>
+    </div>
     </main>
 
     <footer class="l-footer">
