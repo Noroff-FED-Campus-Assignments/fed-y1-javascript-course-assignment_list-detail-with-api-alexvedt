@@ -8,16 +8,12 @@ const params = new URLSearchParams(queryString);
 
 const id = params.get("id");
 
-console.log("id >>>", id);
-
 const url = `https://rickandmortyapi.com/api/character/${id}`;
-console.log(url);
 
 async function fetchCharacter() {
   try {
     const response = await fetch(url);
     const responseJson = await response.json();
-    console.log(responseJson);
 
     const singleCharacter = responseJson;
 
@@ -37,7 +33,6 @@ async function fetchCharacter() {
 </a>
     `;
   } catch (error) {
-    console.log(error);
     detailsContainer.innerHTML = `<p>Something wrong happened.. => ${error}</p>`;
   }
 }

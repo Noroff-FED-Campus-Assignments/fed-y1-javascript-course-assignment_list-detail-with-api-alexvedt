@@ -24,20 +24,21 @@
 
       <article role="doc-introduction">
         <h2>Terms of use</h2>
-        <p>Feel free to use this API I built for a course assignment to learn more about the Rick & Morty characters. <br>You can find the code <a href="/contact.html">here</a></p>
+        <p>Feel free to use this API I built for a course assignment to learn more about the Rick & Morty characters. <br>Any questions? Send me a message <a href="/contact.html">here</a></p>
 
         <p></p>
       </article>
       <div class="search-options">
-        <select class="filter" name="filter" id="js-select-filter-element">
+        <!-- <select class="filter" name="filter" id="js-select-filter-element">
           <option value="all" selected="selected">All</option>
           <option value="sort=title&sortOrder=asc">(A to Z)</option>
           <option value="sort=title&sortOrder=desc">(Z to A)</option>
-        </select>
+        </select> -->
       <input class="search-bar" type="search" name="search-text" id="js-search-bar" placeholder="Search here!">
+      <a id="randomizer" href="">Randomizer!</a>
     </div>
       <section role="list" id="results">
-        <!-- <div class="skeleton" id="js-list-container">_LOADING_INDICATOR_GOES_HERE_</div> -->
+        <div class="loader"></div>
         <div class="results"></div>
       </section>
     </main>
