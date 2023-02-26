@@ -15,7 +15,7 @@ This project was bootstrapped with Vite.
 
 ## Report
 
-_ADD_YOUR_REPORT_HERE_
+Report added in Moodle
 
 ## Getting Started
 
