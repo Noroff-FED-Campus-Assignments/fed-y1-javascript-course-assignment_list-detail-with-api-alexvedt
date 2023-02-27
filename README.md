@@ -8,10 +8,10 @@ This project was bootstrapped with Vite.
 
 ## Resources
 
-- [Design](_LINK_TO_FIGMA_)
-- [Production deploy](_LINK_TO_WEBSITE_)
-- [Deployment CI](_LINK_TO_NETLIFY_VERCEL_DASHBOARD_)
-- [API Docs](_LINK_TO_API_DOCS_)
+- [Design](Not avaible)
+- [Production deploy] https://stalwart-sundae-377311.netlify.app/
+- [Deployment CI](https://app.netlify.com/sites/stalwart-sundae-377311/overview)
+- [API Docs](https://rickandmortyapi.com/)
 
 ## Report
 
