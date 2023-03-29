@@ -4,35 +4,58 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="_REPLACE_WITH_DESCRIPTION_" />
+    <meta name="description" content="Contact form page" />
     <meta
       name="keywords"
-      content="HTML, CSS, JavaScript, _REPLACE_WITH_KEYWORD_"
+      content="HTML, CSS, JavaScript, contact, form"
     />
-    <meta name="author" content="_YOUR_NAME_" />
     <link rel="stylesheet" href="/style.css" />
-    <!-- TODO: Import Javascript -->
-    <title>Contact Us | _REPLACE_SITE_NAME</title>
+
+    <script defer type="module" src="/src/js/contact.js"></script>
+    <title>Contact Us | Rick & Morty API</title>
   </head>
   <body class="animate__animated animate__fadeIn">
     <header class="l-header">
       <h1>Contact Us</h1>
+      <p><a href="#" onclick="window.history.back(); return false;">Go back and explore more</a>      </p>
     </header>
 
     <main class="l-main">
       <article role="doc-introduction">
-        <h2>Contact form</h2>
+        <h2 class="contact-h2">Contact form</h2>
 
-        <p>_REPLACE_INTRODUCTION_</p>
+        <p class="form-p">Feedback & Contact form!</p>
       </article>
 
-      <section role="form-section">
-        <!-- TODO: Creat Form elements here -->
-      </section>
+      <div class="contact-container">
+        <form action="" method="POST" class="form-container" id="formField">
+          <div id="error-name" class="error"></div>
+          <input type="text" name="name" id="nameField" placeholder="Name" />
+
+          <div id="error-subject" class="error"></div>
+          <input name="subject" id="subjectField" placeholder="Subject"></input>
+      
+          <div id="error-email" class="error"></div>
+          <input type="email" name="email" id="emailField" placeholder="Email" />
+      
+          <div id="error-address" class="error"></div>
+          <input type="address" name="address" id="addressField" placeholder="Address" />
+      
+          <div id="error-message" class="error"></div>
+          <textarea name="message" id="messageField" cols="30" rows="10" placeholder="Write your message.."></textarea>
+      
+          <button type="submit" id="submitButton" placeholder="Your form is ready to Submit">Submit</button>
+          <div id="error-container" class="error"></div>
+        </form>
+      
+        <div class="imgcontainer">
+          <img src="images/rickmortytransparentimg.png" alt="Rick & Morty photo">
+        </div>
+      </div>
     </main>
 
     <footer class="l-footer">
-      <small>Created with ❤️ by _REPLACE_</small>
+      <small>Created with ❤️ by Alex</small>
     </footer>
   </body>
 </html>

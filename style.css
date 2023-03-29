@@ -3,9 +3,7 @@
 
 /* optional imports that use the props */
 @import "open-props/normalize";
-@import "animate.css";
 
-@import "src/css/variables.css";
 @import "src/css/reset.css";
 @import "src/css/utilities.css";
 @import "src/css/layout.css";

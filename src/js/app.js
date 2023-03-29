@@ -1,53 +1,66 @@
-/*
-============================================
-Constants
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L66
-============================================
-*/
+const resultsContainer = document.querySelector("#results");
 
-// TODO: Get DOM elements from the DOM
+const url = "https://rickandmortyapi.com/api/character";
 
-/*
-============================================
-DOM manipulation
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L89
-============================================
-*/
+const searchBar = document.querySelector("#js-search-bar");
 
-// TODO: Fetch and Render the list to the DOM
+searchBar.addEventListener("keyup", (event) => {
+  const searchString = event.target.value.trim().toLowerCase();
+  fetchCharacters(searchString);
+});
 
-// TODO: Create event listeners for the filters and the search
+async function fetchCharacters(searchString = "") {
+  try {
+    const response = await fetch(url);
+    const json = await response.json();
 
-/**
- * TODO: Create an event listener to sort the list.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/search-form.html#L91
- */
+    resultsContainer.innerHTML = "";
 
-/*
-============================================
-Data fectching
-@example: https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L104
-============================================
-*/
+    const ppls = json.results;
+    const filteredCharacters = filterCharacters(ppls, searchString);
+    const characters = filteredCharacters;
 
-// TODO: Fetch an array of objects from the API
+    for (let i = 0; i < filteredCharacters.length; i++) {
+      resultsContainer.innerHTML += `
+      <a href="/details.html?id=${characters[i].id}" class="card">
+          <div class="details">
+              <h4 class="name">${characters[i].name}</h4>
+              <img class="image" src="${characters[i].image}" alt="${characters[i].name}">
+                <p class="status">Status: ${characters[i].status}</p>
+                <p class="species">Species: ${characters[i].species}</p>
+                <p class="origin">Origin: ${characters[i].origin.name}</p>
+          </div>
+      </div>
+      </a>
+      `;
+    }
+  } catch (error) {
+    resultsContainer.innerHTML = `<p>Something wrong happened.. => ${error}</p>`;
+  }
+}
+try {
+  console.log("This will run");
+} finally {
+  console.log("This will always run");
+}
 
-/*
-============================================
-Helper functions
-https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/games.html#L154
-============================================
-*/
+fetchCharacters();
 
-/**
- * TODO: Create a function to filter the list of item.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/examples/search-form.html#L135
- * @param {item} item The object with properties from the fetched JSON data.
- * @param {searchTerm} searchTerm The string used to check if the object title contains it.
- */
+// helper functions
+function filterCharacters(characters, searchString) {
+  return characters.filter(function (character) {
+    return (
+      character.name.toLowerCase().includes(searchString) ||
+      character.type.toLowerCase().includes(searchString) ||
+      character.species.toLowerCase().includes(searchString) ||
+      character.status.toLowerCase().includes(searchString) ||
+      character.origin.name.toLowerCase().includes(searchString)
+    );
+  });
+}
 
-/**
- * TODO: Create a function to create a DOM element.
- * @example https://github.com/S3ak/fed-javascript1-api-calls/blob/main/src/js/detail.js#L36
- * @param {item} item The object with properties from the fetched JSON data.
- */
+function makeRandomURL() {
+  const randomId = Math.floor(Math.random() * 20) + 1;
+  return `/details.html?id=${randomId}`;
+}
+document.querySelector("#randomizer").href = makeRandomURL();

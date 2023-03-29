@@ -4,37 +4,47 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="_REPLACE_WITH_DESCRIPTION_" />
+    <meta name="description" content="Page containing a Rick and Morty API" />
     <meta
       name="keywords"
-      content="HTML, CSS, JavaScript, _REPLACE_WITH_KEYWORD_"
+      content="HTML, CSS, JavaScript, Rick and Morty, API, Course Assignment"
     />
-    <meta name="author" content="_YOUR_NAME_" />
+    <meta name="author" content="Alexander Bjerketvedt" />
     <link rel="stylesheet" href="/style.css" />
-    <!-- TODO: Import Javascript -->
-    <title>_REPLACE_SITE_NAME</title>
+    <script defer type="module" src="/src/js/app.js"></script>
+    <title>Rick & Morty Free Api</title>
   </head>
   <body class="animate__animated animate__fadeIn">
     <header class="l-header">
-      <h1>Home</h1>
+      <h1>Rick & Morty free API</h1>
     </header>
 
     <main class="l-main">
       <section role="search"></section>
 
       <article role="doc-introduction">
-        <h2>List</h2>
+        <h2>Terms of use</h2>
+        <p>Feel free to use this API I built for a course assignment to learn more about the Rick & Morty characters. <br>Any questions? Send me a message <a href="/contact.html">here</a></p>
 
-        <p>_REPLACE_INTRODUCTION_</p>
+        <p></p>
       </article>
-
-      <section role="list">
-        <div id="js-list-container">_LOADING_INDICATOR_GOES_HERE_</div>
+      <div class="search-options">
+        <!-- <select class="filter" name="filter" id="js-select-filter-element">
+          <option value="all" selected="selected">All</option>
+          <option value="sort=title&sortOrder=asc">(A to Z)</option>
+          <option value="sort=title&sortOrder=desc">(Z to A)</option>
+        </select> -->
+      <input class="search-bar" type="search" name="search-text" id="js-search-bar" placeholder="Search here!">
+      <a id="randomizer" href="">Randomizer!</a>
+    </div>
+      <section role="list" id="results">
+        <div class="loader"></div>
+        <div class="results"></div>
       </section>
     </main>
 
     <footer class="l-footer">
-      <small>Created with ❤️ by _REPLACE_</small>
+      <small>Created with ❤️ by Alex</small>
     </footer>
   </body>
 </html>

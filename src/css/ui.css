@@ -1,10 +1,182 @@
-/*!
- * UI
- * Place all your regular CSS here. If you don't know where to write your css, write it here.
- * @tutorial https://web.dev/learn/css/flexbox/
- * @example https://fed-vocational-astro-course.vercel.app/en/html-css/module-3/media-queries
- */
-
-.c-card {
-  border-radius: --radius-1;
+@media (--motionOK) {
+  :where(:focus-visible) {
+    transition: outline-offset 145ms var(--ease-2);
+  }
+  :where(:not(:active):focus-visible) {
+    transition-duration: .25s;
+  }
 }
+:where(:not(:active):focus-visible) {
+  outline-offset: 1px;
+}
+
+input {
+  outline-offset: 1px;
+}
+
+
+
+.card {
+  border-radius: --radius-1;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    max-width: 300px;
+    margin: 1rem;
+    text-decoration: none;
+
+    
+  }
+
+  .card p {
+    font-size: 1rem;
+    line-height: 1em;
+    padding-top: 1rem;
+    color: white;
+  }
+  .card a.details {
+    margin-top: 0.5em;
+    background-color: var(--grey) !important;
+    color: white !important;
+  }
+  
+  .card a.details:hover {
+    background-color: var(--light-grey) !important;
+    color: var(--grey) !important;
+  }
+  
+  .card div.details {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+    background: white;
+    background-color: rgb(33, 33, 33);
+    border-radius: 5%;
+    border:1px solid rgb(61, 61, 61);
+  }
+
+  .card div.details:hover {
+    border:1px solid rgb(78, 93, 74);
+  }
+  
+  .name {
+    font-size: 16px;
+    margin-bottom: 0.75rem;
+    color: var(--grey);
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .image {
+    width: 100%;
+    background-position: center top;
+  }
+
+section {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+.cardcontainer {
+  display: flex;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.errormessage{
+  color: red;
+  font-size: 0.8rem;
+  padding-bottom: 0.5rem;
+}
+
+
+
+
+/*this loading animation is borrowed
+Author: https://cssloaders.github.io/
+Link: https://cssloaders.github.io/
+*/
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite
+}
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #FFF;
+  animation: prixClipFix 2s linear infinite ;
+}
+
+@keyframes rotate {
+  100%   {transform: rotate(360deg)}
+}
+
+@keyframes prixClipFix {
+    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+    25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+    75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+    100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+}
+
+
+.search-bar{
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .search-bar {
+      width: 20%;
+    }
+  }
+
+  .search-options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 1rem;
+  }
+  .search-options select {
+    margin-bottom: 0.2rem;
+  }
+
+  
+  @media screen and (min-width: 768px) {
+    .search-options {
+        flex-direction: row-reverse;
+        justify-items: none;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      .search-options select { 
+        height: 27px;
+        font-size: 18px;
+        padding-block: 0;
+        margin-left: 1rem;
+        margin-bottom: 0.6rem;
+        max-width: 70%;
+
+        }
+        .contact-container{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          
+        }
+        .form-container{
+          padding-top: 4rem;
+        }
+      }
+
