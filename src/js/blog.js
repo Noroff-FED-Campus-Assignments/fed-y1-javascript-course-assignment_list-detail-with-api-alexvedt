@@ -12,6 +12,7 @@ async function getBlogPosts() {
 
     if (response.ok) {
       const result = await response.json();
+      const url = "https://cms-sp.flywheelsites.com/wp-json/wp/v2/posts";
       results.innerHTML = "";
       result.forEach((blogpost) => {
         results.innerHTML += `
