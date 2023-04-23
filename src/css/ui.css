@@ -179,4 +179,25 @@ Link: https://cssloaders.github.io/
           padding-top: 4rem;
         }
       }
+      .results{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
 
+      .blogpreviewitem {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        padding-bottom: 2rem;
+      } 
+
+      .blogpreviewitem p {
+        padding-bottom: 1rem;
+
+      }
+      
+      .postlink {
+        text-decoration: underline;
+        color: rgb(188, 188, 188);
+      }
