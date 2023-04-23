@@ -3,7 +3,7 @@ const results = document.querySelector("#results");
 async function getBlogPosts() {
   try {
     const response = await fetch(
-      "https://cms-sp.flywheelsites.com/wp-json/wp/v2/posts",
+      "http://cms-sp.flywheelsites.com/wp-json/wp/v2/posts",
       {
         method: "GET",
         headers: {},
