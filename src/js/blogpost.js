@@ -18,10 +18,8 @@ async function getPost() {
     const response = await fetch(url);
     const details = await response.json();
     document.title = details.title.rendered;
-    // `<h1>${details.title.rendered}</h1>`
-    console.log(details);
 
-    createHtml(details);
+    createStuff(details);
   } catch (error) {
     console.log(error);
   }
@@ -29,9 +27,13 @@ async function getPost() {
 
 getPost();
 
-function createHtml(details) {
+function createStuff(details) {
   header.innerHTML += `<h1>${details.title.rendered}</h1>`;
   detailsEl.innerHTML = `
+  <div class ="card">
+  <div class="details">
     ${details.content.rendered}
+    </div>
+    </div>
     `;
 }
